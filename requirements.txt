@@ -1,6 +1,5 @@
 schedule
 requests
-ssl
 numpy
 pandas
 xlsxwriter
