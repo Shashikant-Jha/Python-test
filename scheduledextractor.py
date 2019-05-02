@@ -118,7 +118,7 @@ class scheduledExtractor():
             message["From"] = sender_email
             message["To"] = receiver_email
             message["Subject"] = subject
-            if param == True:
+            if param == False:
                 message.attach(MIMEText(body, "plain"))
                 filename = 'branding-report ' + str(self.currDateTime) + '.xlsx'
                 with open(filename, "rb") as attachment:
