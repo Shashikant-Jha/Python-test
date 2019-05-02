@@ -25,10 +25,8 @@ class scheduledExtractor():
         self.token = self.getOauthToken()
         self.getAgentExport()
         self.reportMismatch = self.compareReports()
-        if self.reportMismatch:
-            self.sendEmail(True)
-        else:
-            self.sendEmail(False)
+        print("value ", str(self.reportMismatch))
+        self.sendEmail(self.reportMismatch)
         return
     
     def getOauthToken(self):
@@ -91,6 +89,7 @@ class scheduledExtractor():
         jsons_data.to_excel(writer, sheet_name='Entities')
         jsons_data_intents.to_excel(writer, sheet_name='Intents')
         writer.save()
+        os.remove('branding-report ' + str(self.currDateTime))
         return
     
     def compareReports(self):
