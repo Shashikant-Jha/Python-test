@@ -89,7 +89,7 @@ class scheduledExtractor():
         jsons_data.to_excel(writer, sheet_name='Entities')
         jsons_data_intents.to_excel(writer, sheet_name='Intents')
         writer.save()
-        os.remove('branding-report ' + str(self.currDateTime))
+        os.remove('branding-line ' + str(self.currDateTime))
         return
     
     def compareReports(self):
