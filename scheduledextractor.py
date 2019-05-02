@@ -105,6 +105,7 @@ class scheduledExtractor():
             return False
 
     def sendEmail(self, param):
+        print("yo", str(param))
         print("email function")
         subject = "Mail alert - attachement"
         body = "Emailing branding line bot report - contains entities and intents"
@@ -117,7 +118,7 @@ class scheduledExtractor():
             message["From"] = sender_email
             message["To"] = receiver_email
             message["Subject"] = subject
-            if param:
+            if param == True:
                 message.attach(MIMEText(body, "plain"))
                 filename = 'branding-report ' + str(self.currDateTime) + '.xlsx'
                 with open(filename, "rb") as attachment:
