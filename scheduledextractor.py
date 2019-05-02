@@ -1,4 +1,4 @@
-import os, json, schedule, time, requests, base64, zipfile, ntpath, smtplib, email, ssl
+import os, json, schedule, time, requests, base64, zipfile, ntpath, smtplib, email, ssl, shutil
 from datetime import datetime, timedelta
 from email import encoders
 from email.mime.base import MIMEBase
@@ -89,7 +89,7 @@ class scheduledExtractor():
         jsons_data.to_excel(writer, sheet_name='Entities')
         jsons_data_intents.to_excel(writer, sheet_name='Intents')
         writer.save()
-        os.remove('branding-line ' + str(self.currDateTime))
+        shutil.rmtree('branding-line ' + str(self.currDateTime))
         return
     
     def compareReports(self):
