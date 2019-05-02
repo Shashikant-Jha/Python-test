@@ -111,7 +111,7 @@ class scheduledExtractor():
         body = "Emailing branding line bot report - contains entities and intents"
         sender_email = "jhashashi669@gmail.com"
         password = "zxnabpuypsfafdcm"
-        blind_receivers = ["shashikant.jha2@mindtree.com"]
+        blind_receivers = ["jhashashi669@gmail.com"]
         text = ''
         for receiver_email in blind_receivers:
             message = MIMEMultipart()
