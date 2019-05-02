@@ -60,7 +60,7 @@ class scheduledExtractor():
 
     def createReport(self):
         # entites
-        path_to_json = 'branding-line ' + str(self.currDateTime) + '\entities'
+        path_to_json = 'branding-line ' + str(self.currDateTime) + '/entities'
         json_files = [pos_json for pos_json in os.listdir(path_to_json) if pos_json.endswith('_en.json')]
         jsons_data = pd.DataFrame(columns=['entities', 'synonyms'])
         for index, js in enumerate(json_files):
@@ -71,7 +71,7 @@ class scheduledExtractor():
                 jsons_data.loc[index] = [entities, synonyms]
 
         # intents
-        path_to_json_intents = 'branding-line ' + str(self.currDateTime) + '\intents'
+        path_to_json_intents = 'branding-line ' + str(self.currDateTime) + '/intents'
         json_files_intents = [pos_json for pos_json in os.listdir(path_to_json_intents) if pos_json.endswith('_en.json')]
         jsons_data_intents = pd.DataFrame(columns=['intents', 'utterances', 'parameters'])
         for index, js in enumerate(json_files_intents):
