@@ -106,6 +106,7 @@ class scheduledExtractor():
             return False
 
     def sendEmail(self, param):
+        print("email function")
         subject = "Mail alert - attachement"
         body = "Emailing branding line bot report - contains entities and intents"
         sender_email = "jhashashi669@gmail.com"
